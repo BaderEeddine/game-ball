@@ -132,7 +132,7 @@ def run_game():
     while True:
         win.update()
 
-        # جعل الكرة تتحرك
+        # make the ball move
         ball.sety(ball.ycor() + ball.dy)
         ball.setx(ball.xcor() + ball.dx)
 
@@ -144,7 +144,7 @@ def run_game():
             ball.sety(-290)
             ball.dy *= -1
 
-        #الى خرجات الكرة خصها ترجع
+        # The ball has to come back
         if ball.xcor() > 390:
             ball.setx(390)
             ball.goto(0, 0)
@@ -161,7 +161,7 @@ def run_game():
             scoure2 += 1
             scoure.write("player1 : {}    player2 : {} ".format(scoure1, scoure2), align="center",font=("Arial", 20, "normal"))
 
-            #الى الكرة دربتا في المدرب خسها ترتد
+        # The ball was kicked by the coach, so he let it bounce back.
         if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor() < mdrb1.ycor() +60 and ball.ycor() > mdrb1.ycor() -60):
             ball.setx(340)
             ball.dx *= -1
